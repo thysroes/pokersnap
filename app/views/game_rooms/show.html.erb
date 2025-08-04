@@ -1,0 +1,22 @@
+<div id="big-screen">
+  <h1>Room: <%= @game_room.room_number %></h1>
+  <div id="community-cards">
+    <% (@game_room.community_cards || []).each do |card| %>
+      <%= image_tag card_image_url(card) %>
+    <% end %>
+  </div>
+  <div id="pot">Pot: <%= @game_room.pot_amount %></div>
+</div>
+<div id="player-<%= current_player.id %>">
+  <div id="hole-cards">
+    <% current_player.hole_cards.each do |card| %>
+      <%= image_tag card_image_url(card) %>
+    <% end %>
+  </div>
+  <%= button_to 'Fold', game_room_action_records_path(@game_room, action_record: { player_id: current_player.id, action_type: 'fold', amount: 0 }), remote: true %>
+  <!-- call, check, raise, etc. -->
+</div>
+
+
+<%= javascript_pack_tag 'game_room' %>
+
