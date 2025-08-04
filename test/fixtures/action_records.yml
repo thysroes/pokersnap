@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player: one
+  game_room: one
+  action_type: MyString
+  amount: 1
+
+two:
+  player: two
+  game_room: two
+  action_type: MyString
+  amount: 1

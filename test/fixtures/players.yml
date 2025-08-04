@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nickname: MyString
+  seat_number: 1
+  stack_amount: 1
+  hole_cards: 
+  game_room: one
+
+two:
+  nickname: MyString
+  seat_number: 1
+  stack_amount: 1
+  hole_cards: 
+  game_room: two
