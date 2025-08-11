@@ -9,6 +9,7 @@ class GameRoomsController < ApplicationController
 
   def show
     @game_room = GameRoom.find(params[:id])
+    @current_player = @game_room.players.find_by(id: params[:player_id])
   end
 
   def start_game

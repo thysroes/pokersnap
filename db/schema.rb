@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_04_215937) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_11_200702) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -27,9 +27,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_04_215937) do
 
   create_table "game_rooms", force: :cascade do |t|
     t.string "room_number"
-    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0, null: false
+    t.jsonb "community_cards", default: []
+    t.integer "pot_amount", default: 0
+    t.index ["status"], name: "index_game_rooms_on_status"
   end
 
   create_table "players", force: :cascade do |t|
